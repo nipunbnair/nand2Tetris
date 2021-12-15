@@ -1,0 +1,112 @@
+function Drawing.drawO 0
+push argument 0
+pop pointer 0
+push argument 1
+push argument 2
+push constant 20
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push argument 2
+push constant 19
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 0
+return
+function Drawing.drawX 4
+push argument 0
+pop pointer 0
+push argument 1
+push constant 15
+sub
+pop local 0
+push argument 1
+push constant 15
+add
+pop local 1
+push argument 2
+push constant 15
+add
+pop local 2
+push argument 2
+push constant 15
+sub
+pop local 3
+push local 0
+push local 2
+push local 1
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 1
+push local 2
+push local 0
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Drawing.eraseReticle 1
+push argument 0
+pop pointer 0
+push pointer 0
+push argument 1
+call Drawing.sanitizeLocation 2
+pop argument 1
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push local 0
+push argument 1
+call Board.drawReticle 2
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 0
+return
+function Drawing.sanitizeLocation 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+neg
+gt
+push argument 1
+push constant 9
+lt
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+return
+label IF_FALSE0
+push argument 1
+push constant 0
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+return
+label IF_FALSE1
+push argument 1
+push constant 8
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 8
+return
+label IF_FALSE2
+push constant 4
+return

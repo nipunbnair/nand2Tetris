@@ -1,0 +1,22 @@
+class Main {
+   function void main() {
+      var int f,i,j;
+     let i=Keyboard.readInt("Enter a number");
+    let f=1;
+    let j=i;
+    while(i>0)
+    { let j=i;
+     while(j>0)
+    { do Output.printInt(f);
+       
+      let j=j-1;
+    }
+     do Output.println();
+     let f=f+1;
+     let i=i-1;
+    }
+    
+      do Output.println();     
+      return;
+   }
+}

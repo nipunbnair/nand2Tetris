@@ -1,0 +1,15 @@
+class Main {
+    function void main() {
+        var Sort s;
+        let s=Sort.new(2,4,1,3,6,5,11,8,7,9);
+        do s.disp();
+        do Output.println();
+        do s.asc();
+        do s.disp();
+        do Output.println();
+        do s.desc();
+        do s.disp();
+
+        return;
+    }
+}

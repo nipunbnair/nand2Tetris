@@ -1,0 +1,23 @@
+class Main {
+  function void main(){
+    var Board board;
+    var int location;
+    var boolean player, winner;
+    var int key;
+    
+    let board = Board.new();
+  
+    do Output.printString("X plays first!");
+    do Output.println();
+
+    let player = false;
+    let winner = false;
+    while(~winner){
+      do board.chooseMove(player);
+      let winner = board.winner();
+      let player = ~player;
+    }
+    return;
+  }
+
+}

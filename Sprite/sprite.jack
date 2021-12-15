@@ -1,0 +1,20 @@
+function void person(int location) {
+	let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, 64);
+	do Memory.poke(memAddress+32, 160);
+	do Memory.poke(memAddress+64, 64);
+	do Memory.poke(memAddress+96, 0);
+	do Memory.poke(memAddress+128, 2794);
+	do Memory.poke(memAddress+160, 272);
+	do Memory.poke(memAddress+192, 2050);
+	do Memory.poke(memAddress+224, 272);
+	do Memory.poke(memAddress+256, 0);
+	do Memory.poke(memAddress+288, 336);
+	do Memory.poke(memAddress+320, 160);
+	do Memory.poke(memAddress+352, 0);
+	do Memory.poke(memAddress+384, 160);
+	do Memory.poke(memAddress+416, 272);
+	do Memory.poke(memAddress+448, 0);
+	do Memory.poke(memAddress+480, 0);
+	return;
+}

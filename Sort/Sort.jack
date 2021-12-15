@@ -1,0 +1,74 @@
+class Sort {
+
+   field Array a; 
+ 
+   
+   constructor Sort new(int p,int q,int r,int s,int t, int u,int v,int w,int x,int y) {
+        let a = Array.new(10);
+        let a[0] = p;
+        let a[1] = q;
+        let a[2] = r;
+        let a[3] = s;
+        let a[4] = t;
+        let a[5] = u;
+        let a[6] = v;
+        let a[7] = w;
+        let a[8] = x;
+        let a[9] = y;
+        
+      return this;
+   }
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+   method void disp() {
+      var int i;
+      let i=0;
+      while(i<10)
+      {do Output.printInt(a[i]);
+       do Output.printChar(32);
+        let i=i+1;
+      }
+      return;
+   }
+method void asc() {
+    var int t,i,j;
+    let i=0;
+      
+    while(i<10)
+   {   let j=0;
+       while(j<10)
+       { if(a[i]<a[j])
+         { let t=a[i];
+           let a[i]=a[j];
+           let a[j]=t;
+         }
+         let j=j+1;
+       }
+      let i=i+1;            
+   }
+      return;
+   } 
+method void desc() {
+     var int t,i,j;
+     let i=0;
+       
+    while(i<10)
+   {   let j=0;
+      while(j<10)
+       { if(a[i]>a[j])
+         { let t=a[i];
+           let a[i]=a[j];
+           let a[j]=t;
+         }
+         let j=j+1;
+       }
+      let i=i+1;            
+   } 
+      return;
+   }
+}
+   
+
+ 

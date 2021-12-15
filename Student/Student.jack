@@ -1,0 +1,29 @@
+class Student {
+
+   field int aadhar; 
+   field String Name,Branch; 
+
+   
+   constructor Student new(int Ad,String N,String B) {
+      let aadhar = Ad;
+      let Name=N;
+      let Branch =B;
+      return this;
+   }
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+    method void disp() {
+      do Output.printInt(aadhar);
+      do Output.println();
+      do Output.printString(Name);
+      do Output.println();
+      do Output.printString(Branch);
+      do Output.println();
+      return;
+   }
+}
+   
+
+ 

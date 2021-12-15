@@ -1,0 +1,56 @@
+class Drawing
+ {  
+  method void drawO(int x, int y)
+{
+    // Draw an O centered at the given x, y coordinates by making a solid black circle, then a slightly smaller white circle inside of it.
+    do Screen.drawCircle(x, y, 20);
+    do Screen.setColor(false);
+    do Screen.drawCircle(x, y, 19);
+    do Screen.setColor(true);
+    return;
+  }
+
+  method void drawX(int x, int y)
+{
+    // Draw an X centered at the given x, y coordinates.
+    var int left, right, top, bottom;
+
+    let left = x - 15;
+    let right = x + 15;
+    let top = y + 15;
+    let bottom = y - 15;
+
+    do Screen.drawLine(left, top, right, bottom);
+    do Screen.drawLine(right, top, left, bottom);
+
+    return;
+  }
+
+  method void eraseReticle(int location)
+{   var  Board b;
+    // Erase a selection reticle by redrawing it with color set to white.
+    let location = sanitizeLocation(location);
+    do Screen.setColor(false);
+    do b.drawReticle(location);
+    do Screen.setColor(true);
+    return; 
+  }
+
+    method int sanitizeLocation(int location)
+{
+    // Ensures that locations are not < 0 or > 8.
+    if((location > -1) & (location < 9)){
+      return location;
+    }
+    if(location < 0){
+      return 0;
+    }
+    if(location > 8){
+      return 8;
+    }
+    return 4;
+  }
+
+ 
+
+}

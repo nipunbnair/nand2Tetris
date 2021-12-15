@@ -1,0 +1,21 @@
+class Main {
+    function void main() {
+        var Student St1,St2,St3,St4,St5;
+        let St1 = Student.new(123,"Nipun","AIE");
+        let St2 = Student.new(233,"Aravind","CSE");
+        let St3 = Student.new(312,"Shalini","Mech");
+        let St4 = Student.new(445,"Sheethal","CSE");
+        let St5 = Student.new(244,"Swathi","ECE");
+        do St1.disp();
+        do St2.disp();
+        do St3.disp();
+        do St4.disp();
+        do St5.disp();
+        do St1.dispose();
+        do St2.dispose();
+        do St3.dispose();
+        do St4.dispose();
+        do St5.dispose();
+        return;
+    }
+}

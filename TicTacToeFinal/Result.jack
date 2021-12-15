@@ -1,0 +1,24 @@
+class Result
+{  method string idToString(int id){
+    // The game board is represented as an array of locations, -1 for X, 1 for O. This function translates to strings so that we can print output for the user.
+    if(id = -1){
+      return "X";
+    }else{
+      return "O";
+    }
+  }
+
+  method boolean victoryOn(int x, int y, int z){
+    //  Checks to see whether they are all equal to eachother but are not 0 (unplayed). Declares the winner if there is one.
+    if((x = 0) | (y = 0) | (z = 0)){
+      return false;
+    }
+    if((x = y) & (y = z)){
+      do Output.printString("We have a winner! Congratulations to ");
+      do Output.printString(idToString(x));
+      do Output.printString("!");
+      return true;
+    }
+    return false;
+  }
+}
