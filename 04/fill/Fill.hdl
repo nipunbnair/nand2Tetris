@@ -1,0 +1,43 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/04/Fill.asm
+
+// Runs an infinite loop that listens to the keyboard input.
+// When a key is pressed (any key), the program blackens the screen,
+// i.e. writes "black" in every pixel;
+// the screen should remain fully black as long as the key is pressed. 
+// When no key is pressed, the program clears the screen, i.e. writes
+// "white" in every pixel;
+// the screen should remain fully clear as long as no key is pressed.
+
+// Put your code here.
+
+// Set the loop's start location with a label
+(LOOP)
+// set the A register to point to the keyboard's memory map
+@KBD
+// load the keyboard value into D register
+D=M
+// Point to next jump location to clear the screen
+@CLEAR
+// If no key is pressed, jump to CLEAR
+D;JEQ
+// ELSE: set the A register to point to the first pixel
+@SCREEN
+// load 1 to turn on the top left pixel
+M=1
+// Skip over the CLEAR section
+@END
+// Unconditional jump
+0;JMP
+// Label to jump to if clearing the screen
+(CLEAR)
+@SCREEN
+M=0
+// Label for skipping the CLEAR section
+(END)
+// Jump back to the start: infinite loop!
+@LOOP
+// Unconditional jump
+0;JMP
