@@ -1,0 +1,54 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/List/Main.jack
+
+/** Demonstrates the use of the List abstraction. */
+class Main {
+   function void main() {
+      // Creates and uses the list (2,3,5).
+      var List v,L,L1,L2,current;
+      var int i,a,b;
+      let i=0;
+      let v = List.new(5,null);
+      let v = List.new(2,List.new(3,v));
+     // do v.print();        // prints 2 3 5 
+      do v.dispose();      // disposes the list
+      
+     // do L.print();
+     // do Output.printInt(a);
+    while(i<10)
+    { if(L=null)
+      {let a=Keyboard.readInt("Enter a number: ");
+       let L=List.new(a,null);
+       if(List.gcd(a,2)=2)
+       {let L1=List.new(a,null); }
+       else
+       {let L2=List.new(a,null); }
+      }
+      else
+      {
+        let b=Keyboard.readInt("Enter a number: ");
+        let L=List.new(b,L);
+        if(List.gcd(b,2)=2)
+       {let L1=List.new(b,L1); }
+       else
+       {let L2=List.new(b,L2); }
+      }
+   let i=i+1; 
+   }
+      do L.print();
+       
+       
+      do Output.println(); 
+      do L1.print();
+      do Output.println();
+      do L2.print(); 
+     // do Output.printInt(1);      
+      do L.dispose();
+      do L1.dispose();
+      do L2.dispose();
+      return;
+   }
+}
+

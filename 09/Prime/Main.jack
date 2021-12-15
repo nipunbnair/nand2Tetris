@@ -1,0 +1,34 @@
+class Main {
+   function void main() 
+   {
+     var int f,i,j;
+     let f=Keyboard.readInt("Enter a number");
+     let j=f;
+     if(f>1)
+    	{  let i=2;
+      	 while(i<f)
+     		{if(gcd(f,i)=i)
+      			{do Output.printString("Not prime");
+        			return;
+      			}
+                  let i=i+1;
+    		}
+      	  do Output.printString("Prime no");
+      }
+       return;
+   }
+
+method int gcd(int a, int b) 
+  {
+      var int r;
+      while (~(b = 0)) {             // applies Euclid's algorithm
+         let r = a - (b * (a / b));  // r = remainder of the integer division a/b
+         let a = b; let b = r;
+      }
+      return a;
+   }
+}
+
+
+
+}
